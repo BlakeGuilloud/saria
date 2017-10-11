@@ -12,6 +12,8 @@ function decrypt(secret) {
         .decrypt(curr, secret)
         .toString(CryptoJS.enc.Utf8);
 
+      if (!text) return acc;
+
       return acc + text + '\n';
     }, '');
 }
