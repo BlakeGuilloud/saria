@@ -3,13 +3,9 @@ const CryptoJS = require('crypto-js');
 
 const rootFile = '.saria';
 
-function fetchFileContents() {
-  return fs.readFileSync(rootFile, 'utf8')
-    .toString();
-}
-
 function decrypt(secret) {
-  return fetchFileContents()
+  return fs.readFileSync(rootFile, 'utf8')
+    .toString()
     .split(/\r?\n/)
     .reduce((acc, curr) => {
       const text = CryptoJS.AES
