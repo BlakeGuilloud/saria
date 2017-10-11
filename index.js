@@ -25,14 +25,10 @@ function encrypt(text, secret) {
 
   fs.appendFileSync(rootFile, cipherText + '\n', 'utf8');
 
-  return cipherText;
+  return cipherText.toString();
 }
 
-// const text = 'apple';
-// const secret = 'blueberry';
-
-// const encrypted = encrypt(text, secret);
-
-// const decrypted = decrypt(secret);
-
-// console.log(decrypted);
+module.exports = {
+  encrypt,
+  decrypt,
+};
